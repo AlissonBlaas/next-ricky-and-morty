@@ -6,14 +6,27 @@ import { api } from "./services/api";
 
 import styles from "../styles/home.module.scss";
 
-type ICharacter = {
+type TCharacter = {
   id: number;
   image: string;
   name: string;
 };
 
-const Home = ({ characters, error }) => {
+type TResults = {
+  results: TCharacter[];
+};
+
+interface ICharacters {
+  characters: TResults;
+  error: string;
+}
+
+const Home = ({ characters, error }: ICharacters) => {
   const charactersData = characters.results;
+
+  if (!characters && error) {
+    return <h1>ERROR 404</h1>;
+  }
 
   return (
     <div className={styles.main}>
@@ -21,7 +34,7 @@ const Home = ({ characters, error }) => {
         <title>RM | Homepage</title>
       </Head>
       <div className={styles.content}>
-        {charactersData.map((character: ICharacter) => (
+        {charactersData.map((character: TCharacter) => (
           <div className={styles.card} key={character.id}>
             <picture>
               <source srcSet={character.image} type="image/webp" />
