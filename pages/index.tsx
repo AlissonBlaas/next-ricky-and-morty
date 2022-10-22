@@ -6,6 +6,12 @@ import { api } from "./services/api";
 
 import styles from "../styles/home.module.scss";
 
+type ICharacter = {
+  id: number;
+  image: string;
+  name: string;
+};
+
 const Home = ({ characters, error }) => {
   const charactersData = characters.results;
 
@@ -15,7 +21,7 @@ const Home = ({ characters, error }) => {
         <title>RM | Homepage</title>
       </Head>
       <div className={styles.content}>
-        {charactersData.map((character) => (
+        {charactersData.map((character: ICharacter) => (
           <div className={styles.card} key={character.id}>
             <picture>
               <source srcSet={character.image} type="image/webp" />
