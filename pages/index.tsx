@@ -25,7 +25,14 @@ const Home = ({ characters, error }: ICharacters) => {
   const charactersData = characters.results;
 
   if (!characters && error) {
-    return <h1>ERROR 404</h1>;
+    return (
+      <div className={styles.main}>
+        <Head>
+          <title>RM | ERROR</title>
+        </Head>
+        <h1>ERROR 404</h1>
+      </div>
+    );
   }
 
   return (
