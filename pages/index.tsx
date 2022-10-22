@@ -8,7 +8,7 @@ import styles from "../styles/home.module.scss";
 
 const Home = ({ characters, error }) => {
   const charactersData = characters.results;
-  console.log(charactersData);
+
   return (
     <div className={styles.main}>
       <Head>
