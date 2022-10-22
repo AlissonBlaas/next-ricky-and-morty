@@ -7,7 +7,6 @@
   flex: 1;
   display: grid;
   place-items: center;
-  font-family: Roboto;
 }
 
 .content {
@@ -19,6 +18,10 @@
 }
 
 .card {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   padding: 1rem;
   border-radius: 0.4rem;
@@ -26,10 +29,8 @@
   flex: 1 1 150px;
   flex: 0 1 350px;
   margin: 5px;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  text-align: center;
+  transition: transform 0.4s;
+  background-color: var(--white);
 
   img {
     width: 200px;
@@ -37,4 +38,8 @@
     object-fit: cover;
     border-radius: 0.2rem;
   }
+}
+
+.card:hover {
+  transform: scale(1.02);
 }
