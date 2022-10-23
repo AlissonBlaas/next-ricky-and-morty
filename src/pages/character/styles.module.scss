@@ -1,0 +1,32 @@
+.content {
+  display: grid;
+  place-items: center;
+  width: 100%;
+}
+
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 1rem;
+}
+
+.information {
+  margin-top: 1rem;
+  text-align: start;
+}
+
+.informationTitle {
+  padding: 0.4rem;
+  background-color: #41b4c9;
+  margin-bottom: 0.4rem;
+  color: var(--white);
+}
+
+.informationContent {
+  margin-left: 0.5rem;
+}
+
+.episodesStyle {
+  margin-top: 0.5rem;
+}

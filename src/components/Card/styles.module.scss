@@ -1,0 +1,15 @@
+.card {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius: 0.2rem;
+  cursor: pointer;
+  flex: 1 1 150px;
+  flex: 0 1 300px;
+  margin: 0.5rem;
+  padding: 0 0 1rem 0;
+  transition: transform 0.4s;
+  background-color: var(--white);
+}

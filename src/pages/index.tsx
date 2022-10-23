@@ -1,15 +1,12 @@
 import Head from "next/head";
 import Link from "next/link";
+import Image from "next/image";
 
-import { fetchAllCharacters } from "../hooks/fetch";
+import { fetchAllCharacters, TCharacter } from "../hooks/fetch";
+
+import Card from "../components/Card";
 
 import styles from "../../styles/home.module.scss";
-
-type TCharacter = {
-  id: number;
-  image: string;
-  name: string;
-};
 
 type TResults = {
   results: TCharacter[];
@@ -17,8 +14,12 @@ type TResults = {
 
 interface ICharacters {
   characters: TResults;
-  error: string;
 }
+
+const inlineStyles = {
+  borderRadius: "0.2rem 0.2rem 0 0",
+  overflow: "hidden",
+};
 
 const Home = ({ characters }: ICharacters) => {
   const charactersData = characters.results;
@@ -31,14 +32,23 @@ const Home = ({ characters }: ICharacters) => {
       <div className={styles.content}>
         {charactersData.map((character: TCharacter) => (
           <Link href={`character/${character.id}`} key={character.id}>
-            <div className={styles.card}>
-              <picture>
-                <source srcSet={character.image} type="image/webp" />
-                <img alt={character.name} src={character.image} />
-              </picture>
-              <div className="information">
-                <h3>{character.name}</h3>
-              </div>
+            <div>
+              <Card>
+                <div style={inlineStyles}>
+                  <Image
+                    src={character.image}
+                    alt={character.name}
+                    width={350}
+                    height={250}
+                    objectFit="cover"
+                    className="rounded-full"
+                  />
+                </div>
+
+                <div className={styles.information}>
+                  <h3>{character.name}</h3>
+                </div>
+              </Card>
             </div>
           </Link>
         ))}
