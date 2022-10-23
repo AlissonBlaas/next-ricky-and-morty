@@ -27,7 +27,7 @@ const Home = ({
   return (
     <div className={styles.main}>
       <Head>
-        <title>RM | {character.name}</title>
+        <title>{`RM | ${character.name || "character detail"}`}</title>
       </Head>
       <div className={styles.content}>
         <Card>
