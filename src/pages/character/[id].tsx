@@ -13,7 +13,7 @@ const Home = ({
   return (
     <div className={styles.main}>
       <Head>
-        <title>RM | Character details</title>
+        <title>RM | {character.name}</title>
       </Head>
       <div className={styles.content}>
         <picture>
