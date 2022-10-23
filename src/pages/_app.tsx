@@ -2,6 +2,7 @@ import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
 import { AppProps } from "next/app";
 import Image from "next/image";
+import Head from "next/head";
 
 import "../../styles/globals.scss";
 
@@ -35,7 +36,12 @@ function MyApp({ Component, pageProps }: AppProps) {
         alt="rickandmortylogo"
       />
       {loading ? (
-        <h2>loading character info...</h2>
+        <>
+          <Head>
+            <title>loading...</title>
+          </Head>
+          <h2>loading character info...</h2>
+        </>
       ) : (
         <Component {...pageProps} />
       )}
