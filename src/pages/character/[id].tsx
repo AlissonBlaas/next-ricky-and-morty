@@ -22,8 +22,6 @@ const Home = ({
   const locationInfo = character.location;
   const originInfo = character.origin;
 
-  console.log(character);
-
   return (
     <div className={styles.main}>
       <Head>
